@@ -7,37 +7,133 @@
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-  <!-- Google tag (gtag.js) -->
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-24GSXPZ17S"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('config', 'G-24GSXPZ17S');
+  </script>
 
-   gtag('config', 'G-24GSXPZ17S');
-    </script>
-  <link rel="shortcut icon" href="Bard_26.jpg" type="image/x-icon">
+  <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1215176252316119"
      crossorigin="anonymous"></script>
 
+  <link rel="shortcut icon" href="Bard_26.jpg" type="image/x-icon">
+  <script src="vanta-background.js" defer></script>
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+
+    #vanta-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+
+    .center-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .profile-img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 20px 0;
+    }
+
+    .links a {
+      display: block;
+      background: #ffe6f0;
+      color: #111;
+      text-decoration: none;
+      padding: 15px;
+      margin: 10px auto;
+      border-radius: 8px;
+      width: 250px;
+      transition: background 0.3s;
+    }
+
+    .links a:hover {
+      background: #ffd6ec;
+    }
+
+    .description {
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    .live-indicator {
+      display: inline-block;
+      background: #e53935;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 15px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    iframe, .tiktok-embed {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-  <div id="vanta-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;"></div>
+  <div id="vanta-bg"></div>
 
-<div class="center-card">
-  <h1>@pitechou772</h1>
-  
-  <img src="Bard_26.jpg" class="profile-img" alt="Photo de profil">
-  <div class="links">
-    <a href="https://www.tiktok.com/@pitechou772">TikTok</a>
-    <a href="https://www.instagram.com/pitechou.772/">Instagram</a>
-    <a href="https://www.youtube.com/@pitechou772">YouTube</a>
-    <a href="https://www.twitch.tv/pitechou772">Twitch</a>
+  <div class="center-card">
+    <h1>@pitechou772</h1>
+    <img src="Bard_26.jpg" class="profile-img" alt="Photo de profil">
+
+    <div class="description">
+      <p>Bienvenue sur mon site ! Je suis <strong>Pitechou772</strong>, créateur de contenu sur TikTok, YouTube et Twitch. Retrouve ici tous mes liens, mes dernières vidéos, et vérifie si je suis en live !</p>
     </div>
+
+    <div id="live-status">
+      <span class="live-indicator">🔴 En live maintenant !</span> <!-- Tu pourras cacher ça automatiquement plus tard -->
+    </div>
+
+    <div class="links">
+      <a href="https://www.tiktok.com/@pitechou772">TikTok</a>
+      <a href="https://www.instagram.com/pitechou.772/">Instagram</a>
+      <a href="https://www.youtube.com/@pitechou772">YouTube</a>
+      <a href="https://www.twitch.tv/pitechou772">Twitch</a>
+    </div>
+
+    <h3>📱 Dernière vidéo TikTok</h3>
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@pitechou772/video/7511322873882103062" data-video-id="ID_DE_TA_VIDEO" style="max-width: 325px;min-width: 325px;">
+      <section></section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+    <h3>▶️ Dernière vidéo YouTube</h3>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/iW_SlGDJ4gg?si=Og0-Il2W44SwvW84"></iframe>
   </div>
 
- 
-  <script src="vanta-background.js" defer></script>
 </body>
 </html>
