@@ -3,140 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes Réseaux</title>
+  <meta name="description" content="Site officiel de Pitechou772 - Créateur de contenu sur TikTok, YouTube et Twitch">
+  <meta name="keywords" content="Pitechou772, TikTok, YouTube, Twitch, streaming, contenu">
+  <meta property="og:title" content="Pitechou772 - Créateur de contenu">
+  <meta property="og:description" content="Bienvenue sur mon site ! Je suis Pitechou772, créateur de contenu sur TikTok, YouTube et Twitch.">
+  <meta property="og:image" content="Bard_26.jpg">
+  <title>Pitechou772 | Créateur de contenu</title>
+
+  <link rel="icon" type="image/png" href="Bard_26.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-
-  <meta name="google-adsense-account" content="ca-pub-1215176252316119">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1215176252316119"
-     crossorigin="anonymous"></script>
-
-  <link rel="shortcut icon" href="Bard_26.jpg" type="image/x-icon">
-  <script src="vanta-background.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1215176252316119" crossorigin="anonymous"></script>
 
   <style>
-    body {
-      background: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      margin: 0;
+    :root {
+      --primary-color: #1a96e7;
+      --secondary-color: #ffe6f0;
+      --text-color: #ffffff;
+      --dark-color: #111111;
+      --hover-color: #ffd6ec;
+      --shadow-color: rgba(255, 255, 255, 0.1);
     }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--dark-color);
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
     #vanta-bg {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       z-index: -1;
     }
-
-    .center-card {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #1a96e7 ;
+    .header {
+      width: 100%;
+      background: rgba(26, 150, 231, 0.8);
       backdrop-filter: blur(10px);
-      border-radius: 15px;
+      padding: 15px 0;
+      text-align: center;
+    }
+    .center-card {
+      max-width: 800px;
+      width: 90%;
+      margin: 20px auto;
+      background: rgba(26, 150, 231, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
       padding: 30px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px var(--shadow-color);
+      border: 1px solid rgba(255,255,255,0.2);
     }
-
     .profile-img {
       border-radius: 50%;
-      width: 150px;
-      height: 150px;
+      width: 150px; height: 150px;
       object-fit: cover;
-      margin: 20px 0;
+      border: 4px solid var(--secondary-color);
+      transition: transform 0.3s;
     }
-
-    .links a {
-      display: block;
-      background: #ffe6f0;
-      color: #111;
-      text-decoration: none;
-      padding: 15px;
-      margin: 10px auto;
-      border-radius: 8px;
-      width: 250px;
-      transition: background 0.3s;
+    .profile-img:hover { transform: scale(1.05); }
+    .social-links {
+      display: flex; justify-content: center; gap: 15px; margin: 15px 0;
     }
-
-    .links a:hover {
-      background: #ffd6ec;
+    .social-links a {
+      color: var(--text-color); font-size: 24px; transition: color 0.3s;
     }
-
+    .social-links a:hover { color: var(--secondary-color); }
     .description {
       margin: 20px 0;
       font-size: 1.1rem;
+      line-height: 1.6;
     }
-
+    .links {
+      display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 25px 0;
+    }
+    .links a {
+      display: flex; align-items: center; justify-content: center;
+      background: var(--secondary-color);
+      color: var(--dark-color);
+      padding: 15px;
+      border-radius: 8px;
+      width: 250px;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .links a:hover {
+      background: var(--hover-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .links a i { margin-right: 10px; }
     .live-indicator {
-      display: inline-block;
-      background: #5000fc;
+      background: #ff0000;
       color: white;
       padding: 10px 20px;
       border-radius: 30px;
       font-weight: bold;
-      margin-top: 15px;
-      animation: pulse 1s infinite;
+      margin: 15px 0;
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 10px rgba(255,0,0,0.5);
     }
-
     @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.6; }
-      100% { opacity: 1; }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
-
-    iframe, .tiktok-embed {
-      margin-top: 20px;
+    .video-section {
+      margin-top: 30px;
+      width: 100%;
+    }
+    iframe {
+      width: 100%; height: 315px; border-radius: 10px; border: none; margin-bottom: 20px;
+    }
+    .tiktok-embed { margin: 20px auto; max-width: 325px; }
+    .footer {
+      width: 100%;
+      background: rgba(26, 150, 231, 0.5);
+      backdrop-filter: blur(5px);
+      padding: 15px 0;
+      text-align: center;
+      margin-top: 30px;
+    }
+    @media (max-width: 768px) {
+      .center-card { width: 95%; padding: 20px; }
+      .links a { width: 200px; }
+      iframe { height: 200px; }
     }
   </style>
 </head>
-
 <body>
-
   <div id="vanta-bg"></div>
-
-  <div class="center-card">
-    <!-- Placez ceci juste après <body> ou dans votre <div class="center-card"> -->
-<div style="text-align: center; margin: 20px 0;">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1215176252316119"
-       crossorigin="anonymous"></script>
-  <!-- Bannière horizontale -->
-  <ins class="adsbygoogle"
-       style="display:inline-block;width:728px;height:90px"
-       data-ad-client="ca-pub-1215176252316119"
-       data-ad-slot="1234567890"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
+  <div class="header">
     <h1>@pitechou772</h1>
-    <img src="Bard_26.jpg" class="profile-img" alt="Photo de profil">
-
+  </div>
+  <div id="live-status">
+    <div class="live-indicator" id="live-indicator">Chargement...</div>
+  </div>
+  <div class="center-card">
+    <div class="profile-container">
+      <img src="Bard_26.jpg" class="profile-img" alt="Photo de profil de Pitechou772">
+    </div>
+    <div class="social-links">
+      <a href="https://www.tiktok.com/@pitechou772" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/pitechou.772/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@pitechou772" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.twitch.tv/pitechou772" target="_blank"><i class="fab fa-twitch"></i></a>
+    </div>
     <div class="description">
-      <p>Bienvenue sur mon site ! Je suis <strong>Pitechou772</strong>, créateur de contenu sur TikTok, YouTube et Twitch. Retrouve ici tous mes liens, mes dernières vidéos, et vérifie si je suis en live !</p>
+      <p>Bienvenue sur mon site ! Je suis <strong>Pitechou772</strong>, créateur de contenu passionné par le gaming, le streaming et la création de vidéos. Retrouvez ici tous mes liens, mes dernières vidéos, et vérifiez si je suis en live !</p>
     </div>
-
-    <div id="live-status">
-      <span class="live-indicator">🔴 En live maintenant !</span> <!-- Tu pourras cacher ça automatiquement plus tard -->
-    </div>
-
     <div class="links">
-      <a href="https://www.tiktok.com/@pitechou772">TikTok</a>
-      <a href="https://www.instagram.com/pitechou.772/">Instagram</a>
-      <a href="https://www.youtube.com/@pitechou772">YouTube</a>
-      <a href="https://www.twitch.tv/pitechou772">Twitch</a>
+      <a href="https://www.tiktok.com/@pitechou772" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="https://www.instagram.com/pitechou.772/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.youtube.com/@pitechou772" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://www.twitch.tv/pitechou772" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
     </div>
-      <section></section>
-    </blockquote>
-    <script async src="https://www.tiktok.com/embed.js"></script>
-
-    <h3>▶️ Dernière vidéo YouTube</h3>
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/iW_SlGDJ4gg" frameborder="0" allowfullscreen></iframe>
-
+    <div class="video-section">
+      <h3>▶️ Dernière vidéo YouTube</h3>
+      <iframe src="https://www.youtube.com/embed/iW_SlGDJ4gg" allowfullscreen></iframe>
+      <h3>🎵 Dernier TikTok</h3>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@pitechou772/video/123456789" data-video-id="123456789"><section></section></blockquote>
+    </div>
+  </div>
+  <div class="footer">
+    <p>© 2023 Pitechou772 | Tous droits réservés</p>
   </div>
 
+  <script async src="https://www.tiktok.com/embed.js"></script>
+  <script src="vanta-background.js"></script>
+  <script>
+    async function checkLiveStatus() {
+      const liveIndicator = document.getElementById("live-indicator");
+      try {
+        const isLive = await simulateTwitchApiCall();
+        if (isLive) {
+          liveIndicator.textContent = "🔴 EN DIRECT";
+          liveIndicator.style.background = "#ff0000";
+        } else {
+          liveIndicator.textContent = "⚫ Hors ligne";
+          liveIndicator.style.background = "#555";
+          liveIndicator.style.boxShadow = "none";
+        }
+      } catch (e) {
+        liveIndicator.textContent = "Erreur de statut";
+        liveIndicator.style.background = "#555";
+      }
+    }
+    function simulateTwitchApiCall() {
+      return new Promise(resolve => {
+        setTimeout(() => resolve(Math.random() > 0.5), 500);
+      });
+    }
+    checkLiveStatus();
+    setInterval(checkLiveStatus, 60000);
+  </script>
 </body>
 </html>
